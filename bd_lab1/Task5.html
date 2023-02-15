@@ -6,15 +6,21 @@
     <title>Школьник</title>
 </head>
 <body>
+    <input type="text" id="inputYear" />
+    <button onclick="setStudentBirthdateFromInput()">Установить возраст</button>
     <script>
+        const yearRange = 200
+
         var student = {
             firstName: "Angelica",
             lastName: "Vengrzhinovskaya",
             patronymic: "Stanislavovna",
-            birthday: "13.06.2002",
+            birthday: 2002,
             class: 1,
             subjects: ["math", "english", "programming"],
+
             printStudentInfo: function () {
+                document.write('<br>')
                 document.write(`Name: ${this.lastName}<br>`)
                 document.write(`Date of birth: ${this.birthday}<br>`)
                 document.write(`Class: ${this.class}<br>`)
@@ -28,6 +34,11 @@
                 document.write('<br>')
                 document.write(JSON.stringify(student))
             },
+
+            setBirthdate: function (newDate) {
+                this.birthday = newDate
+            },
+
             registration: {
                 country: "Russia",
                 city: "Kemerovo",
@@ -37,6 +48,7 @@
                     document.write(`Registration: ${this.country}, ${this.city}, ${this.street} ${this.house}`)
                 }
             },
+
             residence: {
                 country: "Russia",
                 city: "Kemerovo",
@@ -47,7 +59,21 @@
                 }
             }
         }
+
+        function setStudentBirthdateFromInput() {
+            var year = Number(document.getElementById("inputYear").value)
+            var currentYear = new Date().getFullYear()
+            if (year < currentYear - yearRange || year > currentYear) {
+                alert("Неправдивый год рождения")
+            } else {
+                student.setBirthdate(year)
+                document.clear()
+                student.printStudentInfo()
+            }
+        }
+
         student.printStudentInfo()
+
     </script>
 </body>
 </html>
