@@ -11,16 +11,40 @@
             firstName: "Angelica",
             lastName: "Vengrzhinovskaya",
             patronymic: "Stanislavovna",
-            bithday: "13.06.2002",
+            birthday: "13.06.2002",
             class: 1,
             subjects: ["math", "english", "programming"],
-            display: function () {
-                document.write(this.lastName + `<br>`)
-                document.write(this.class + `<br>`)
-                document.write(this.subjects)
+            printStudentInfo: function () {
+                document.write(`Name: ${this.lastName}<br>`)
+                document.write(`Date of birth: ${this.birthday}<br>`)
+                document.write(`Class: ${this.class}<br>`)
+                document.write(`Fav subjects: ${this.subjects}`)
+
+                document.write('<br>')
+                this.registration.printRegistrationInfo()
+                document.write('<br>')
+                this.residence.printResidenceInfo()
+            },
+            registration: {
+                country: "Russia",
+                city: "Kemerovo",
+                street: "Krasnaya",
+                house: "6",
+                printRegistrationInfo: function () {
+                    document.write(`Registration: ${this.country}, ${this.city}, ${this.street} ${this.house}`)
+                }
+            },
+            residence: {
+                country: "Russia",
+                city: "Kemerovo",
+                street: "Sinyaya",
+                house: "5",
+                printResidenceInfo: function () {
+                    document.write(`Residence: ${this.country}, ${this.city}, ${this.street} ${this.house}`)
+                }
             }
         }
-        student.display()
+        student.printStudentInfo()
     </script>
 </body>
 </html>
