@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Школьник</title>
+</head>
+<body>
+    <script>
+        var student = {
+            firstName: "Angelica",
+            lastName: "Vengrzhinovskaya",
+            patronymic: "Stanislavovna",
+            bithday: "13.06.2002",
+            class: 1,
+            subjects: ["math", "english", "programming"],
+            display: function () {
+                document.write(this.lastName + `<br>`)
+                document.write(this.class + `<br>`)
+                document.write(this.subjects)
+            }
+        }
+        student.display()
+    </script>
+</body>
+</html>
