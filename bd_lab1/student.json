@@ -1,0 +1,21 @@
+{
+  "firstName": "Angelica",
+  "lastName": "Vengrzhinovskaya",
+  "patronymic": "Stanislavovna",
+  "birthday": 2002,
+  "class": 1,
+  "maxClass": 11,
+  "subjects": [ "math", "english", "programming" ],
+  "registration": {
+    "country": "Russia",
+    "city": "Kemerovo",
+    "street": "Krasnaya",
+    "house": "6"
+  },
+  "residence": {
+    "country": "Russia",
+    "city": "Kemerovo",
+    "street": "Sinyaya",
+    "house": "5"
+  }
+}
