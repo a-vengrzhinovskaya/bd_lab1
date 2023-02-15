@@ -8,6 +8,7 @@
 <body>
     <input type="text" id="inputYear" />
     <button onclick="setStudentBirthdateFromInput()">Установить возраст</button>
+    <button onclick="student.upClass()">Повысить класс</button>
     <script>
         const yearRange = 200
 
@@ -17,6 +18,7 @@
             patronymic: "Stanislavovna",
             birthday: 2002,
             class: 1,
+            maxClass: 11,
             subjects: ["math", "english", "programming"],
 
             printStudentInfo: function () {
@@ -24,6 +26,7 @@
                 document.write(`Name: ${this.lastName}<br>`)
                 document.write(`Date of birth: ${this.birthday}<br>`)
                 document.write(`Class: ${this.class}<br>`)
+                document.write(`Max class: ${this.maxClass}<br>`)
                 document.write(`Fav subjects: ${this.subjects}`)
 
                 document.write('<br>')
@@ -37,6 +40,15 @@
 
             setBirthdate: function (newDate) {
                 this.birthday = newDate
+            },
+
+            upClass: function () {
+                if (this.class < this.maxClass) {
+                    this.class += 1
+                    alert(`Теперь класс ${this.class}`)
+                } else {
+                    alert("Достигнуть максимальный класс")
+                }
             },
 
             registration: {
